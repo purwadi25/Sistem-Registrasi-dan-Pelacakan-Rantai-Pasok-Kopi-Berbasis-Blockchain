@@ -1,0 +1,158 @@
+/* --- Import Font Kustom --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* --- Variabel Warna (Tema Kopi & Alam) --- */
+:root {
+  --color-bg: #F4F1EE; /* Latar belakang krem muda */
+  --color-container-bg: #FFFFFF;
+  --color-primary-text: #3E2723; /* Coklat tua (kopi) */
+  --color-secondary-text: #5D4037; /* Coklat medium */
+  --color-border: #D7CCC8; /* Garis border coklat muda */
+  --color-accent: #2E7D32; /* Hijau (daun kopi) */
+  --color-accent-dark: #1B5E20; /* Hijau tua */
+  --color-status-bg: #E8F5E9; /* Latar belakang status sukses */
+  --color-status-text: #1B5E20; /* Teks status sukses */
+  --color-result-bg: #FAFAFA; /* Latar belakang hasil detail */
+}
+
+/* --- Reset & Pengaturan Dasar Body --- */
+* {
+  box-sizing: border-box; /* Membuat layout padding lebih mudah */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: var(--color-primary-text);
+  margin: 0;
+  padding: 40px 20px; /* Jarak container dari atas/bawah dan samping */
+  text-align: center;
+  line-height: 1.6;
+  min-height: 100vh; /* Memastikan body penuh setinggi layar */
+  
+  /* === PENGATURAN BACKGROUND FOTO (BARU) === */
+
+  /* Trik ini menumpuk 2 background:
+    1. Overlay warna coklat transparan (agar kontras)
+    2. URL Gambar (tema kopi)
+  */
+  background-image: 
+    linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)),
+    /* ▼ URL GAMBAR SUDAH DIGANTI ▼ */
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjw2y1FYWwnAL20tNOuD50dq20efWa5bsMew&s');
+
+  /* Properti agar gambar penuh & diam saat scroll */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; /* Ini kuncinya untuk efek parallax */
+  background-repeat: no-repeat;
+
+  /* === AKHIR PENGATURAN BACKGROUND FOTO === */
+}
+
+/* --- Container Utama --- */
+.container {
+  max-width: 600px;
+  margin: 0 auto; /* Tengah secara horizontal */
+  background: var(--color-container-bg);
+  padding: 30px 40px; /* Padding di dalam container */
+  border-radius: 16px;
+  /* Bayangan yang lebih halus dan modern */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Sedikit lebih gelap agar 'pop' */
+  text-align: left; /* Teks di dalam rata kiri */
+}
+
+/* --- Tipografi (Judul) --- */
+h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--color-primary-text);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--color-secondary-text);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* --- Pemisah Seksi (<hr>) --- */
+hr {
+   border: 0;
+   height: 1px;
+   background-color: var(--color-border);
+   margin: 40px 0; /* Memberi jarak besar antar seksi */
+}
+
+/* --- Elemen Form (Input & Button) --- */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  margin-bottom: 15px; /* Jarak antar input */
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efek saat input di-klik (focus) */
+input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--color-accent);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Efek saat tombol di-hover */
+button:hover {
+  background-color: var(--color-accent-dark);
+}
+
+/* Efek saat tombol di-klik */
+button:active {
+   transform: scale(0.99);
+}
+
+/* --- Elemen Spesifik (Status & Hasil) --- */
+p#status {
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--color-status-bg);
+  color: var(--color-status-text);
+  font-weight: 400;
+  word-break: break-all; /* Mencegah alamat panjang merusak layout */
+  border: 1px solid var(--color-accent-dark);
+}
+
+p#hasilDetail {
+  white-space: pre-line; /* Menjaga format baris baru */
+  text-align: left;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--color-result-bg);
+  border: 1px solid var(--color-border);
+  word-break: break-all;
+  min-height: 50px;
+  margin-top: 20px;
+}

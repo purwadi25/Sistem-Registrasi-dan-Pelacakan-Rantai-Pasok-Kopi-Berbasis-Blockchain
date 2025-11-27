@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrasi Kopi Blockchain</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  
+  <div class="container">
+    <h2>📜 Registrasi Aset Kopi</h2>
+    
+    <!-- Status koneksi akan muncul di sini -->
+    <p id="status">Menghubungkan ke MetaMask...</p>
+    
+    <!-- Bagian Tambah Data Kopi -->
+    <div class="card-section">
+      <h3>Tambah Data Kopi</h3>
+      <input type="text" id="namaPetani" placeholder="Nama Petani">
+      <input type="text" id="lokasiKebun" placeholder="Lokasi Kebun">
+      <input type="text" id="jenisKopi" placeholder="Jenis Kopi">
+      <input type="text" id="tanggalPanen" placeholder="Tanggal Panen ">
+      <input type="text" id="sertifikasi" placeholder="Sertifikasi">
+      <button id="daftarBtn">Daftarkan Kopi</button>
+    </div>
+
+    <hr> 
+    <div class="card-section">
+      <h3>Lihat Detail Kopi</h3>
+      <input type="number" id="idKopi" placeholder="Masukkan ID Kopi">
+      <button id="lihatBtn">Lihat Detail</button>
+      <p id="hasilDetail"></p>
+    </div>
+    <hr> 
+    <div class="card-section">
+      <h3>Pindah Kepemilikan Kopi</h3>
+      <input type="text" id="pindahIdKopi" placeholder="Masukkan ID Kopi" />
+      <input type="text" id="pindahAlamatBaru" placeholder="Masukkan Alamat Pemilik Baru" />
+      <button id="tombolPindah">Pindahkan Kepemilikan</button>
+    </div>
+    <hr> 
+    <div class="card-section">
+      <h3>Catat Aktivitas</h3>
+      <input type="text" id="catatIdKopi" placeholder="Masukkan ID Kopi" />
+      <input type="text" id="catatKeterangan" placeholder="Masukkan Keterangan Aktivitas" />
+      <button id="tombolCatat">Catat Aktivitas</button>
+    </div>
+
+  </div> 
+  <script src="app.js"></script>
+
+</body>
+</html>
